@@ -27,7 +27,7 @@ class TvListAdapter(private val tvList: List<TvModel>) :
 
         fun bindItem(tv: TvModel) {
             itemView.tvTitle.text = tv.name
-            Glide.with(itemView).load("https://image.tmdb.org/t/p/w500${tv.poster_path}")
+            Glide.with(itemView).load("https://image.tmdb.org/t/p/w500${tv.posterPath}")
                 .into(itemView.ivPoster)
         }
     }

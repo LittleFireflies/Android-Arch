@@ -1,11 +1,20 @@
 package com.widdyjp.tvshows.data.model
 
+import com.squareup.moshi.Json
+
 data class TvModel(
+    @field:Json(name = "id")
     var id: Int = 0,
+    @field:Json(name = "name")
     var name: String = "",
+    @field:Json(name = "overview")
     var overview: String = "",
-    var first_air_date: String = "",
-    var backdrop_path: String = "",
-    var poster_path: String = "",
-    var vote_average: Double = 0.0
+    @field:Json(name = "first_air_date")
+    var firstAirDate: String = "",
+    @field:Json(name = "backdrop_path")
+    var backdropPath: String = "",
+    @field:Json(name = "poster_path")
+    var posterPath: String = "",
+    @field:Json(name = "vote_average")
+    var voteAverage: Double = 0.0
 )
