@@ -20,12 +20,13 @@ class TvListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_tv_list)
 
         viewModel = obtainViewModel(this)
+        val adapter = TvListAdapter()
+        val layoutManager = GridLayoutManager(this, 2)
+        rvTv.adapter = adapter
+        rvTv.layoutManager = layoutManager
 
-        viewModel.getTvShows().observe(this, Observer { tvShows ->
-            val adapter = TvListAdapter(tvShows)
-            val layoutManager = GridLayoutManager(this, 2)
-            rvTv.adapter = adapter
-            rvTv.layoutManager = layoutManager
+        viewModel.tvShows.observe(this, Observer { tvShows ->
+            adapter.tvList = tvShows
             adapter.notifyDataSetChanged()
         })
     }

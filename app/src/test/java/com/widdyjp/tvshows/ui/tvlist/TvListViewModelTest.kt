@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import com.widdyjp.tvshows.data.model.TvModel
 import com.widdyjp.tvshows.data.model.getDummyTvShows
-import com.widdyjp.tvshows.data.repository.TvShowRepository
+import com.widdyjp.tvshows.data.repository.tvshow.TvShowRepository
 import org.junit.Before
 import org.junit.Test
 import org.mockito.Mockito.*

@@ -1,4 +1,4 @@
-package com.widdyjp.tvshows.data.repository
+package com.widdyjp.tvshows.data.repository.tvshow
 
 import androidx.lifecycle.LiveData
 import com.widdyjp.tvshows.data.model.TvModel

@@ -9,8 +9,11 @@ import com.widdyjp.tvshows.R
 import com.widdyjp.tvshows.data.model.TvModel
 import kotlinx.android.synthetic.main.item_tv_list.view.*
 
-class TvListAdapter(private val tvList: List<TvModel>) :
+class TvListAdapter :
     RecyclerView.Adapter<TvListAdapter.ViewHolder>() {
+
+    var tvList = listOf<TvModel>()
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder = ViewHolder(
         LayoutInflater.from(parent.context).inflate(
             R.layout.item_tv_list, parent, false

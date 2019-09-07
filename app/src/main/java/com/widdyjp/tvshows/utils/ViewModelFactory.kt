@@ -2,7 +2,7 @@ package com.widdyjp.tvshows.utils
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.widdyjp.tvshows.data.repository.TvShowRepository
+import com.widdyjp.tvshows.data.repository.tvshow.TvShowRepository
 import com.widdyjp.tvshows.ui.tvlist.TvListViewModel
 
 
