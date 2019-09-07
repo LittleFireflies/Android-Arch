@@ -2,7 +2,7 @@ package com.widdyjp.tvshows.utils
 
 import com.widdyjp.tvshows.BuildConfig
 
-object Constant {
+object Constants {
     const val BASE_URL = "https://api.themoviedb.org/"
-    val API_KEY = BuildConfig.API_KEY
+    const val API_KEY = BuildConfig.API_KEY
 }
