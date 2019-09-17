@@ -29,7 +29,7 @@ class TvListViewModelTest {
 
         val observer = mock(Observer::class.java)
 
-        viewModel.getTvShows().observeForever(observer as Observer<in List<TvModel>>)
+        viewModel.tvShows.observeForever(observer as Observer<in List<TvModel>>)
 
         verify(observer).onChanged(dummyData)
     }

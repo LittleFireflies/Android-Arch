@@ -1,7 +1,10 @@
 package com.widdyjp.tvshows.data.model
 
+import android.os.Parcelable
 import com.squareup.moshi.Json
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
 data class TvModel(
     @field:Json(name = "id")
     var id: Int = 0,
@@ -17,4 +20,4 @@ data class TvModel(
     var posterPath: String = "",
     @field:Json(name = "vote_average")
     var voteAverage: Double = 0.0
-)
+) : Parcelable
