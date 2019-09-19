@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.widdyjp.tvshows.R
 import com.widdyjp.tvshows.data.model.TvModel
+import com.widdyjp.tvshows.utils.dateFormatter
 import kotlinx.android.synthetic.main.activity_tv_detail.*
 
 class TvDetailActivity : AppCompatActivity() {
@@ -23,7 +24,7 @@ class TvDetailActivity : AppCompatActivity() {
                 .into(ivBackdrop)
             Glide.with(this).load("https://image.tmdb.org/t/p/w500${tv.posterPath}").into(ivPoster)
             tvTitle.text = tv.name
-            tvFirstAir.text = tv.firstAirDate
+            tvFirstAir.text = dateFormatter(tv.firstAirDate)
             tvRating.text = "${tv.voteAverage}/10"
             tvOverview.text = tv.overview
         }
