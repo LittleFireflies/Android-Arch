@@ -69,4 +69,9 @@ dependencies {
     api "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.2.2"
     // Anko commons
     implementation "org.jetbrains.anko:anko:0.10.8"
+    // Room components
+    implementation "androidx.room:room-runtime:2.1.0"
+    implementation "androidx.room:room-ktx:2.1.0"
+    kapt "androidx.room:room-compiler:2.1.0"
+    androidTestImplementation "androidx.room:room-testing:2.1.0"
 }

@@ -1,25 +1,29 @@
-package com.widdyjp.tvshows.ui.tvlist
+package com.widdyjp.tvshows.ui.tvdetail
 
 import android.content.Context
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import com.widdyjp.tvshows.data.db.TvShowDatabase
 import com.widdyjp.tvshows.data.model.TvModel
 import com.widdyjp.tvshows.data.repository.tvshow.TvShowRepository
 
-class TvListViewModel(context: Context) : ViewModel() {
+class TvDetailViewModel(context: Context) : ViewModel() {
 
     private val tvShowRepository: TvShowRepository
-
-    var tvShows: LiveData<List<TvModel>>
 
     init {
         val tvShowDao = TvShowDatabase.getDatabase(context).tvShowDao()
         tvShowRepository = TvShowRepository(tvShowDao)
-        tvShows = tvShowRepository.getTvShows()
     }
 
-    fun getTvShows() {
-        tvShows = tvShowRepository.getTvShows()
+    fun isFavorite(id: Int): Boolean {
+        return tvShowRepository.getFavoriteTvShowById(id) != null
+    }
+
+    fun addToFavorite(tv: TvModel) {
+        tvShowRepository.addFavoriteTv(tv)
+    }
+
+    fun removeFavorite(tv: TvModel) {
+        tvShowRepository.removeFavoriteTvShow(tv)
     }
 }

@@ -35,7 +35,7 @@ class TvListActivity : AppCompatActivity() {
     }
 
     private fun obtainViewModel(activity: FragmentActivity): TvListViewModel {
-        val factory = ViewModelFactory()
+        val factory = ViewModelFactory(activity)
         return ViewModelProviders.of(activity, factory).get(TvListViewModel::class.java)
     }
 }
