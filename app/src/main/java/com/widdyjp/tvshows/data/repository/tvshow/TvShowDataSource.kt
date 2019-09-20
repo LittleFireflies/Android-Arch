@@ -8,7 +8,6 @@ interface TvShowDataSource {
 
     // Database
     fun addFavoriteTv(tvModel: TvModel)
-
     fun getFavoriteTvShow(): LiveData<List<TvModel>>
     fun getFavoriteTvShowById(id: Int): TvModel?
     fun removeFavoriteTvShow(tvModel: TvModel)

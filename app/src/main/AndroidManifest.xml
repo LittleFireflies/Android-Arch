@@ -14,7 +14,7 @@
         <activity
             android:name=".ui.tvdetail.TvDetailActivity"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".ui.tvlist.TvListActivity">
+        <activity android:name=".ui.main.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
