@@ -1,7 +1,7 @@
 package com.widdyjp.tvshows.ui.favorite
 
 import android.content.Context
-import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.widdyjp.tvshows.data.db.TvShowDatabase
 import com.widdyjp.tvshows.data.model.TvModel
@@ -11,11 +11,14 @@ class FavoriteTvViewModel(context: Context) : ViewModel() {
 
     private val tvShowRepository: TvShowRepository
 
-    var tvShows: LiveData<List<TvModel>>
+    var tvShows = MutableLiveData<List<TvModel>>(listOf())
 
     init {
         val tvShowDao = TvShowDatabase.getDatabase(context).tvShowDao()
         tvShowRepository = TvShowRepository(tvShowDao)
-        tvShows = tvShowRepository.getFavoriteTvShow()
+    }
+
+    fun getFavoriteTvShows() {
+        tvShows.value = tvShowRepository.getFavoriteTvShow()
     }
 }

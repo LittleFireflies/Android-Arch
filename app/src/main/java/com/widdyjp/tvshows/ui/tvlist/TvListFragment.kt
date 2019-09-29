@@ -36,6 +36,8 @@ class TvListFragment : Fragment() {
         rvTv.adapter = adapter
         rvTv.layoutManager = layoutManager
 
+        viewModel.getTvShows()
+
         viewModel.tvShows.observe(this, Observer { tvShows ->
             adapter.tvList = tvShows
         })

@@ -37,6 +37,8 @@ class FavoriteTvFragment : Fragment() {
         rvFavorite.adapter = adapter
         rvFavorite.layoutManager = layoutManager
 
+        viewModel.getFavoriteTvShows()
+
         viewModel.tvShows.observe(this, Observer { tvShows ->
             adapter.tvList = tvShows
         })

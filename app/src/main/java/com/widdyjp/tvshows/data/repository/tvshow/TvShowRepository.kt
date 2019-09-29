@@ -1,6 +1,5 @@
 package com.widdyjp.tvshows.data.repository.tvshow
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import com.widdyjp.tvshows.data.db.TvShowDao
 import com.widdyjp.tvshows.data.model.TvModel
@@ -14,7 +13,7 @@ import retrofit2.Response
 class TvShowRepository(private val tvShowDao: TvShowDao) : TvShowDataSource {
     private val service = NetworkClient.createNetworkService()
 
-    override fun getTvShows(): LiveData<List<TvModel>> {
+    override fun getTvShows(): MutableLiveData<List<TvModel>> {
         val liveData = MutableLiveData<List<TvModel>>()
 
         service.discoverTvShows(Constants.API_KEY).enqueue(object : Callback<TvResponse> {
@@ -36,11 +35,8 @@ class TvShowRepository(private val tvShowDao: TvShowDao) : TvShowDataSource {
         tvShowDao.insertFavoriteTvShow(tvModel)
     }
 
-    override fun getFavoriteTvShow(): LiveData<List<TvModel>> {
-        val liveData = MutableLiveData<List<TvModel>>()
-        liveData.value = tvShowDao.getFavoriteTvShows()
-
-        return liveData
+    override fun getFavoriteTvShow(): List<TvModel> {
+        return tvShowDao.getFavoriteTvShows()
     }
 
     override fun getFavoriteTvShowById(id: Int): TvModel? {
